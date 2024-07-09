@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './NavBar'
 
 function MoviesPage() {
   return (
-    <div>MoviesPage</div>
+    <div>
+        <Navbar/>
+    </div>
   )
 }
 
