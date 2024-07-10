@@ -8,7 +8,7 @@ function HomePage() {
     <div className="homepage-container">
       <Navbar />
       <div className="background-image">
-        <img src="https://media.istockphoto.com/id/1662909784/photo/american-football-arena-with-yellow-goal-post-grass-field-and-blurred-fans-at-playground-view.webp?b=1&s=170667a&w=0&k=20&c=hqYfWF03GFzy58AhkTIOvQR7zjWT0ug7KsuVvd_qw1Y=" alt="Background" />
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Background" />
       </div>
       <div className="homepage-content">
         <h1>Welcome to Our Game Platform</h1>
