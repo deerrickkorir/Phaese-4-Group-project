@@ -44,7 +44,7 @@ const AboutPage = () => {
                     <p>GameApp is your ultimate destination for buying and exploring a wide range of games.</p>
                 </section>
                 <section>
-                    <h2>Our Mission</h2>
+                    <h2>Our Mission</h2>a
                     <p>Our mission is to provide gamers with an easy-to-use platform where they can discover, purchase, and enjoy the best games available.</p>
                 </section>
                 <section>
