@@ -14,6 +14,7 @@ class Action(db.Model, SerializerMixin):
     name = db.Column(db.String)
     price = db.Column(db.Integer)
     image = db.Column(db.String)
+    rating = db.column(db.Integer)
 
     def __repr__(self):
         return f'<Action {self.id}, {self.name}, {self.price}, {self.image}>'
@@ -26,6 +27,7 @@ class Adventure(db.Model, SerializerMixin):
     name = db.Column(db.String)
     price = db.Column(db.Integer)
     image = db.Column(db.String)
+    rating = db.column(db.Integer)
 
     def __repr__(self):
         return f'<Adventure {self.id}, {self.name}, {self.price}, {self.image}>'
@@ -38,6 +40,7 @@ class Racing(db.Model, SerializerMixin):
     name = db.Column(db.String)
     price = db.Column(db.Integer)
     image = db.Column(db.String)
+    rating = db.column(db.Integer)
 
     def __repr__(self):
         return f'<Racing {self.id}, {self.name}, {self.price}, {self.image}>'
@@ -50,6 +53,7 @@ class Shooter(db.Model, SerializerMixin):
     name = db.Column(db.String)
     price = db.Column(db.Integer)
     image = db.Column(db.String)
+    rating = db.column(db.Integer)
 
     def __repr__(self):
-        return f'<Shooter {self.id}, {self.name}, {self.price}, {self.image}>'
+        return f'<Shooter {self.id}, {self.name}, {self.price}, {self.image}, {self.rating}>'
