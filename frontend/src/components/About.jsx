@@ -1,10 +1,11 @@
 import React from 'react';
+import Navbar from './NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const styles = {
     container: {
         height: '100vh',
-        backgroundImage: 'url("background.jpg")',
+        backgroundImage: 'url("/background.jpg")',  // Adjust the path to match your file location
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
