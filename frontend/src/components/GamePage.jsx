@@ -3,8 +3,7 @@ import Navbar from './NavBar'
 
 function GamePage() {
   return (
-    <div>
-        <Navbar/>
+    <div>  
     </div>
   )
 }

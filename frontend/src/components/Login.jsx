@@ -42,7 +42,7 @@ function Login() {
   return (
     <div style={backgroundStyle}>
       <div style={overlayStyle}></div>
-      <Navbar />
+      
       <div style={formContainerStyle}>
         <h2>Login Page</h2>
         <form>
