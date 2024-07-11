@@ -6,6 +6,8 @@ import Navbar from './components/NavBar';
 import Cart from './components/Cart';
 import Login from './components/Login';
 import OrderHistory from './components/OrderHistory';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
     return (
