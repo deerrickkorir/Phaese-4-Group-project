@@ -49,6 +49,20 @@ body{
 
 /* //search box */
 
+  /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styling for the page container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
   /* Basic styling for the navbar */
   .navbar {
     background-color: #333; /* Dark background color */
@@ -85,5 +99,92 @@ body{
   
   .search-bar::placeholder {
     color: #999; /* Placeholder text color */
+  }
+  
+  /* Layout for content area */
+  .content {
+    display: flex;
+    flex: 1; /* Take up remaining vertical space */
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px; /* Width of the sidebar */
+    background-color: #f0f0f0; /* Light background color */
+    padding: 20px;
+    border-right: 1px solid #ccc; /* Border on the right */
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  
+  .sidebar li:hover {
+    background-color: #ddd; /* Highlight on hover */
+  }
+  
+  /* Games section styling */
+  .games {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .game-card {
+    width: 100%; /* Adjust as needed */
+    max-width: 300px; /* Maximum width of each game card */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .game-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+  }
+  
+  .game-details {
+    padding: 16px;
+  }
+  
+  .game-details h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .game-details p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  
+  .btn:hover {
+    background-color: #555;
   }
   
