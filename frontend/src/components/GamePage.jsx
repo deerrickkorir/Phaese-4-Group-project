@@ -1,18 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import './GamePage.css';
 import logo from '../assets/search_3694304.png';
+import { fetchDataActions } from './UseData';
+import { fetchDataAdventures } from './UseData';
+import { fetchDataRacings } from './UseData';
+import { fetchDataShooters } from './UseData';
 
 function GamePage() {
+  const [category, setCategory] = useState('Games');
+  const [actions, setActions] = useState([]);
+  const [adventures, setAdventures] = useState([]);
+  const [racings, setRacings] = useState([]);
+  const [shooters, setShooters] = useState([]);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [url, setUrl] = useState('http://127.0.0.1:5555/actions'); // Default category
 
   useEffect(() => {
-    fetchData();
-  }, []); // Run the effect only once
+    fetchData()
+    fetchDataActions()
+      .then(data => {
+        setActions(data);
+      })
+      .catch(error => {
+        // Handle errors if needed
+        console.error('Error fetching actions:', error);
+      });
+
+      fetchDataAdventures()
+      .then(data => {
+        setAdventures(data);
+      })
+      .catch(error => {
+        // Handle errors if needed
+        console.error('Error fetching adventures:', error);
+      });
+
+      fetchDataRacings()
+      .then(data => {
+        setRacings(data);
+      })
+      .catch(error => {
+        // Handle errors if needed
+        console.error('Error fetching racings:', error);
+      });
+
+      fetchDataShooters()
+      .then(data => {
+        setShooters(data);
+      })
+      .catch(error => {
+        // Handle errors if needed
+        console.error('Error fetching shooters:', error);
+      });
+  }, []); // Empty dependency array means this effect runs once after initial render
+
 
   const fetchData = () => {
-    fetch(url)
+    fetch('http://127.0.0.1:5555/actions')
       .then(res => res.json())
       .then(data => {
         setData(data);
@@ -25,28 +69,31 @@ function GamePage() {
 
   function handleCategories(category) {
     switch (category) {
-      case 'actions':
-        setUrl('http://127.0.0.1:5555/actions')
-        fetchData()
+      case 'Actions':
+        setData(actions);
+        setCategory(category)
+        setFilteredData(actions)
         break;
-      case 'adventures':
-        setUrl('http://127.0.0.1:5555/adventures')
-        fetchData()
+      case 'Adventures':
+        setData(adventures);
+        setCategory(category)
+        setFilteredData(adventures)
         break;
-      case 'racings':
-        setUrl('http://127.0.0.1:5555/racings')
-        fetchData()
+      case 'Racings':
+        setData(racings);
+        setCategory(category)
+        setFilteredData(racings)
         break;
-      case 'shooters':
-        setUrl('http://127.0.0.1:5555/shooters')
-        fetchData()
+      case 'Shooters':
+        setData(shooters);
+        setCategory(category)
+        setFilteredData(shooters)
         break;
       default:
-        break;
+        return; // Exit early if category doesn't match any case
     }
-    
   }
-
+  
   // Handle filter input change
   const handleFilterChange = event => {
     const value = event.target.value.toLowerCase();
@@ -67,14 +114,15 @@ function GamePage() {
           onChange={handleFilterChange}/>
       </div>
     </header>
+    <h1 className='header-content'>{category}</h1>
     <div className="content">
         <aside className="sidebar">
           <h2>Categories</h2>
           <ul>
-            <li onClick={() => handleCategories('actions')}>Action</li>
-            <li onClick={() => handleCategories('adventures')}>Adventure</li>
-            <li onClick={() => handleCategories('racings')}>Racing</li>
-            <li onClick={() => handleCategories('shooters')}>Shooter</li>
+            <li onClick={() => handleCategories('Actions')}>Action</li>
+            <li onClick={() => handleCategories('Adventures')}>Adventure</li>
+            <li onClick={() => handleCategories('Racings')}>Racing</li>
+            <li onClick={() => handleCategories('Shooters')}>Shooter</li>
           </ul>
         </aside>
     <div className='card-container'>
