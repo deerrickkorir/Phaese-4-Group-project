@@ -1,67 +1,40 @@
 import React from 'react';
 import Navbar from './NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const backgroundStyle = {
-  height: '100vh',
-  margin: '0',
-  backgroundImage: 'url("https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg")', // Correct URL format
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  position: 'relative'
-};
-
-const overlayStyle = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  zIndex: 1
-};
-
-const formContainerStyle = {
-  backgroundColor: 'rgba(0,0,0, 0.7)',
-  color: 'white',
-  fontWeight: 'bold',
-  border: '3px solid #f1f1f1',
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  zIndex: 2,
-  width: '80%',
-  maxWidth: '400px',
-  padding: '20px',
-  textAlign: 'center'
-};
+import './Login.css'; // Assuming this file contains your custom styles
 
 function Login() {
   return (
-    <div style={backgroundStyle}>
-      <div style={overlayStyle}></div>
-      
-      <div style={formContainerStyle}>
-        <h2>Login Page</h2>
-        <form>
-          <div className="form-group">
-            <label htmlFor="email">Email address:</label>
-            <input type="email" className="form-control" id="email" placeholder="Enter email" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
-            <input type="password" className="form-control" id="pwd" placeholder="Enter password" />
-          </div>
-          <div className="form-check">
-            <label className="form-check-label">
-              <input className="form-check-input" type="checkbox" /> Remember me
-            </label>
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+    <div class="container">
+      <div class="text-2xl font-bold mb-2 text-[#1e0e4b] text-center"><span class="text-[#7747ff]"></span></div>
+      <div class="heading">Welcome back to GameApp</div>
+      <form action="" class="form">
+        <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail" />
+        <input required="" class="input" type="password" name="password" id="password" placeholder="Password" />
+        <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
+        <input class="login-button" type="submit" value="Sign In" />
+      </form>
+      <div class="social-account-container">
+        <span class="title">Or Sign in with</span>
+        <div class="social-accounts">
+          <button class="social-button google">
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 488 512">
+              <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path>
+            </svg>
+          </button>
+          <button class="social-button apple">
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+            </svg>
+          </button>
+          <button class="social-button twitter">
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+              <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+            </svg>
+          </button>
+        </div>
       </div>
+      <span class="agreement"><a href="#">Learn user licence agreement</a></span>
     </div>
   );
 }

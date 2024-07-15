@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.pinimg.com/564x/1a/f2/1a/1af21a61b7dda5230c2329ef241fb7c7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background-image: url('https://i.pinimg.com/474x/27/c6/cd/27c6cd2a41b6bb8f4e440879b67dfb5c.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card .info {
+    max-width: 90%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.card .share a {
+    margin: 0 10px;
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.card .share svg {
+    width: 24px;
+    height: 24px;
+}
+
+.card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: auto; /* Adjust height to auto for smaller screens */
+        padding: 10px;
+    }
+}
