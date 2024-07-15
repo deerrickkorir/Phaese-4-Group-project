@@ -47,14 +47,7 @@ body{
     color: #fff;
 }
 
-/* //search box */
-
-  /* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* search box  */
   
   /* Basic styling for the page container */
   .container {
@@ -188,3 +181,10 @@ body{
     background-color: #555;
   }
   
+  h1{
+    text-align: center;
+    color: aqua;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+ 
