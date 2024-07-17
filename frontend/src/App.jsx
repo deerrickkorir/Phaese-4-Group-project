@@ -8,6 +8,7 @@ import Login from './components/Login';
 import OrderHistory from './components/OrderHistory';
 import AboutPage from './components/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/games" element={<GamePage />} />
-
+                    <Route path="/contacts" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/order-history" element={<OrderHistory />} />

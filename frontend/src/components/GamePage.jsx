@@ -14,6 +14,7 @@ function GamePage() {
   const [shooters, setShooters] = useState([]);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [backgroundImage, setBackgroundImage] = useState("https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg");
 
   useEffect(() => {
     fetchData()
@@ -73,21 +74,25 @@ function GamePage() {
         setData(actions);
         setCategory(category)
         setFilteredData(actions)
+        setBackgroundImage("https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg");
         break;
       case 'Adventures':
         setData(adventures);
         setCategory(category)
         setFilteredData(adventures)
+        setBackgroundImage("https://media.rawg.io/media/games/daa/daaee07fcb40744d90cf8142f94a241f.jpg");
         break;
       case 'Racings':
         setData(racings);
         setCategory(category)
         setFilteredData(racings)
+        setBackgroundImage("https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg");
         break;
       case 'Shooters':
         setData(shooters);
         setCategory(category)
         setFilteredData(shooters)
+        setBackgroundImage("https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg");
         break;
       default:
         return; // Exit early if category doesn't match any case
@@ -104,7 +109,7 @@ function GamePage() {
     setFilteredData(filtered);
   };
 
-  return ( <div>
+  return ( <div className='game-page' style={{ backgroundImage: `url(${backgroundImage})` }}>
     <header className="navbar">
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
@@ -126,16 +131,17 @@ function GamePage() {
           </ul>
         </aside>
     <div className='card-container'>
+    
       {filteredData.map((item) => (
         <div className='card' key={item.id}>
           <img src={item.image} alt={item.name} />
           <div className='card-content'>
             <h3>{item.name}</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolorum.
+            {item.price}
             </p>
             <a href='' className='btn'>
-              {item.price}
+              Add to Cart
             </a>
           </div>
           </div>
