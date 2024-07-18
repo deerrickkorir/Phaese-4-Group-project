@@ -53,7 +53,7 @@ const AboutPage = () => {
                 </section>
                 <section>
                     <h2>Contact Us</h2>
-                    <p>If you have any questions or feedback, feel free to <a href="" style={styles.link}>contact us</a>.</p>
+                    <p>If you have any questions or feedback, feel free to <a href="http://127.0.0.1:5173/contacts" style={styles.link}>contact us</a>.</p>
                 </section>
             </div>
         </div>
