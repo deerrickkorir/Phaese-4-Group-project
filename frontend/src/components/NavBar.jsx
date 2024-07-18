@@ -9,7 +9,7 @@ function Navbar() {
       <Link to="/games">Games</Link>
       <Link to="/cart">Cart</Link>
       <Link to="/login">Login</Link>
-      <Link to="/order-history">Order History</Link>
+      <Link to="/add game">Add Game</Link>
       <Link to="/contacts">Contacts</Link>
     </nav>
   );

@@ -23,7 +23,6 @@ function GamePage() {
         setActions(data);
       })
       .catch(error => {
-        // Handle errors if needed
         console.error('Error fetching actions:', error);
       });
 
@@ -32,7 +31,6 @@ function GamePage() {
         setAdventures(data);
       })
       .catch(error => {
-        // Handle errors if needed
         console.error('Error fetching adventures:', error);
       });
 
@@ -41,7 +39,6 @@ function GamePage() {
         setRacings(data);
       })
       .catch(error => {
-        // Handle errors if needed
         console.error('Error fetching racings:', error);
       });
 
@@ -50,10 +47,9 @@ function GamePage() {
         setShooters(data);
       })
       .catch(error => {
-        // Handle errors if needed
         console.error('Error fetching shooters:', error);
       });
-  }, []); // Empty dependency array means this effect runs once after initial render
+  }, []); 
 
 
   const fetchData = () => {
@@ -95,14 +91,13 @@ function GamePage() {
         setBackgroundImage("https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg");
         break;
       default:
-        return; // Exit early if category doesn't match any case
+        return; 
     }
   }
   
-  // Handle filter input change
+  
   const handleFilterChange = event => {
     const value = event.target.value.toLowerCase();
-    // Filter data based on input value
     const filtered = data.filter(item =>
       item.name.toLowerCase().includes(value)
     );

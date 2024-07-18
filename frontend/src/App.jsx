@@ -5,10 +5,10 @@ import GamePage from './components/GamePage';
 import Navbar from './components/NavBar';
 import Cart from './components/Cart';
 import Login from './components/Login';
-import OrderHistory from './components/OrderHistory';
 import AboutPage from './components/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Contact from './components/Contact';
+import AddGame from './components/AddGame';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
                     <Route path="/contacts" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/order-history" element={<OrderHistory />} />
+                    <Route path="/add game" element={<AddGame />} />
                     <Route path="/about" element={<AboutPage />} /> 
                 </Routes>
             </div>
