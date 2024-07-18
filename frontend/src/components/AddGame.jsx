@@ -47,7 +47,7 @@ const AddGame = () => {
   };
 
   return (
-    <div>
+    <div className="page">
     <div className="add-game-container">
       <h2 className="add-game-title">Add a Game</h2>
       <form className="add-game-form" onSubmit={handleSubmit}>
