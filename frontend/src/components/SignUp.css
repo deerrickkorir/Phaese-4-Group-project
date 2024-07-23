@@ -1,0 +1,77 @@
+/* SignUp.css */
+.vh-100 {
+  height: 100vh;
+}
+
+.bg-image-vertical {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-background-image-url');
+  background-size: cover;
+}
+
+.form {
+  width: 100%;
+  max-width: 450px;
+  padding: 15px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-outline {
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.input + span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+}
+
+.signUp {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.signUp a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signUp a:hover {
+  text-decoration: underline;
+}
+
+.h-custom-2 {
+  height: calc(100% - 80px);
+}
+
+@media (max-width: 768px) {
+  .h-custom-2 {
+      height: 100%;
+  }
+}
