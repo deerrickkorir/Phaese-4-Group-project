@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './components/HomePage';
 import GamePage from './components/GamePage';
@@ -29,6 +29,5 @@ function App() {
             </div>
         </BrowserRouter>
     );
-}
 
 export default App;
