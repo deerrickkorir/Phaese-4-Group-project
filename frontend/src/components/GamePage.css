@@ -1,0 +1,138 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: #f0f0f0
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+.card{
+    width: 325px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+.card-content{
+    padding: 16px;
+}
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+.card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+}
+
+/* search box  */
+  
+  /* Basic styling for the page container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Basic styling for the navbar */
+  .navbar {
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding around the navbar */
+    display: flex;
+    justify-content: space-between; /* Align items with space in between */
+    align-items: center; /* Center items vertically */
+  }
+  
+  /* Logo styling */
+  .logo {
+    height: 40px; /* Adjust height as needed */
+  }
+  
+  .logo-container {
+    margin-right: 20px; /* Space between logo and search bar */
+  }
+  
+  /* Search bar styling */
+  .search-container {
+    flex: 1; /* Take up remaining space */
+    margin-left: 20px; /* Space between logo and search bar */
+  }
+  
+  .search-bar {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the search input */
+    font-size: 16px; /* Font size */
+    border: 2px solid #555; /* Border color */
+    border-radius: 20px; /* Rounded corners */
+    background-color: #eee; /* Light background color */
+    outline: none; /* Remove outline on focus */
+  }
+  
+  .search-bar::placeholder {
+    color: #999; /* Placeholder text color */
+  }
+  
+  /* Layout for content area */
+  .content {
+    display: flex;
+    flex: 1; /* Take up remaining vertical space */
+    padding: 0;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px; /* Width of the sidebar */
+    background-color: #f0f0f0; /* Light background color */
+    padding: 20px;
+    border-right: 1px solid #ccc; /* Border on the right */
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  
+  .sidebar li:hover {
+    background-color: #ddd; /* Highlight on hover */
+  }
+  
+  .header-content {
+    color: rgb(115, 138, 138);
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+ 
