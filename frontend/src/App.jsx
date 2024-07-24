@@ -12,13 +12,8 @@ import AddGame from './components/AddGame';
 import { ThemeProvider } from './ThemeContext';
 import { Toaster } from 'react-hot-toast';
 
-import { ThemeProvider } from './ThemeContext';
-import { Toaster } from 'react-hot-toast';
-
-
 
 function App() {
-    return ( <ThemeProvider>
     return ( <ThemeProvider>
         <BrowserRouter>
             <div>
@@ -26,18 +21,17 @@ function App() {
             <Toaster/> 
                 <Navbar/>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
+                    <Route path="/" element={<Login/>} />
+                    <Route path="/login" element={<HomePage />} />
                     <Route path="/games" element={<GamePage />} />
                     <Route path="/contacts" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
-                    <Route path="/login" element={<Login />} />
                     <Route path="/add game" element={<AddGame />} />
                     <Route path="/about" element={<AboutPage />} /> 
                 </Routes>
             </div>
 
         </BrowserRouter>
-        </ThemeProvider>
         </ThemeProvider>
     );
 }
