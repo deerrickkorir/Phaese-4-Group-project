@@ -71,7 +71,7 @@ const SignUp = () => {
                     </div>
                     <div className="col-sm-6 px-0 d-none d-sm-block">
                         <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+                            src="https://i.pinimg.com/736x/64/27/80/6427801c01a0774c47d35cae399d58e7.jpg"
                             alt="SignUp"
                             className="w-100 vh-100"
                             style={{ objectFit: 'cover', objectPosition: 'left' }}
