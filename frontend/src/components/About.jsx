@@ -1,11 +1,10 @@
-import React from 'react';
-import Navbar from './NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const styles = {
     container: {
         height: '100vh',
-        backgroundImage: 'url("/background.jpg")',  // Adjust the path to match your file location
+        backgroundImage: 'url("https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',  // Adjust the path to match your file location
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -37,14 +36,14 @@ const styles = {
 const AboutPage = () => {
     return (
         <div style={styles.container}>
-            <h1 style={styles.headerText}>About GameApp</h1>
+            <h1 style={styles.headerText}></h1>
             <div style={styles.content}>
                 <section>
                     <h2>Welcome to GameApp!</h2>
                     <p>GameApp is your ultimate destination for buying and exploring a wide range of games.</p>
                 </section>
                 <section>
-                    <h2>Our Mission</h2>a
+                    <h2>Our Mission</h2>
                     <p>Our mission is to provide gamers with an easy-to-use platform where they can discover, purchase, and enjoy the best games available.</p>
                 </section>
                 <section>
@@ -53,7 +52,19 @@ const AboutPage = () => {
                 </section>
                 <section>
                     <h2>Contact Us</h2>
-                    <p>If you have any questions or feedback, feel free to <a href="" style={styles.link}>contact us</a>.</p>
+                    <p>If you have any questions or feedback, feel free to <a href="http://localhost:5174/contacts" style={styles.link}>contact us</a>.</p>
+                </section>
+                <section>
+                    <h2>Our Values</h2>
+                    <p>We believe in quality, innovation, and customer satisfaction. These core values drive us to constantly improve and provide the best experience for our users.</p>
+                </section>
+                <section>
+                    <h2>Our History</h2>
+                    <p>GameApp was founded in 2020 with the vision of creating a seamless gaming experience. Since then, we have grown into a thriving community of gamers and developers.</p>
+                </section>
+                <section>
+                    <h2>Future Plans</h2>
+                    <p>We are continuously working on new features and partnerships to enhance your gaming experience. Stay tuned for exciting updates!</p>
                 </section>
             </div>
         </div>
