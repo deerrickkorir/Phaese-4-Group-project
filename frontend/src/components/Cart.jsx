@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { ThemeContext } from '../ThemeContext';
 import './cart.css'; // Importing CSS styles
 
@@ -8,12 +9,24 @@ const img = 'https://c4.wallpaperflare.com/wallpaper/459/1000/937/jett-valorant-
 // Functional component Cart
 function Cart() {
     const { cartItems, setCartItems } = useContext(ThemeContext);
+
     
-  const handleQuantityChange = (event) => {
-    const newCartItems = [...cartItems];
-    newCart.quantity = event.target.value;
-    setCartItems(newCartItems);
-  };
+
+    const handleQuantityChange = (event, changedItem) => {
+      const newQuantity = event.target.value;
+      const updatedCartItems = cartItems.map(item => {
+        if (item.id === changedItem.id) {
+          return { ...item, quantity: parseInt(newQuantity, 10) }; // Convert newQuantity to integer
+        }
+        return item;
+      });
+      setCartItems(updatedCartItems);
+    };
+
+    const handleRemoveItem = (id) => {
+      const updatedCartItems = cartItems.filter(item => item.id !== id);
+      setCartItems(updatedCartItems);
+    };
 
     // Conditional rendering based on items in the cart
     if (cartItems && cartItems.length > 0) {
@@ -40,14 +53,7 @@ function Cart() {
                 <span className="cart-price cart-column">{item.price}</span>
               </td>
               <td className="cart-item cart-column">
-                <input
-                  className="cart-quantity-input"
-                  type="number"
-                  value={item.quantity}
-                 onChange={(event) => handleQuantityChange(event, item)}
-                  style={{ width: '50px' }}
-                />
-                <button className="btn btn-danger" type="button">
+                <button className="btn btn-danger" type="button" onClick={() => handleRemoveItem(item.id)}>
                   Remove
                 </button>
               </td>
@@ -56,17 +62,9 @@ function Cart() {
         </tbody>
       </table>
 
-      <div className="cart-total">
-        <strong className="cart-total-title">Total</strong>
-        <span className="cart-total-price" style={{ textAlign: 'right' }}>
-          {/* Calculate total price dynamically */}
-          Rs {calculateTotalPrice().toFixed(2)}
-        </span>
-      </div>
-
       <div className="btn-purchase" style={{ marginTop: '10%' }}>
-        <button type="button" className="btn btn-dark btn-purchase">
-          <i className="fa-solid fa-cart-shopping" style={{ marginRight: '6%' }}></i>PURCHASE
+        <button type="button" className="btn btn-dark btn-purchase" onClick={() => handlePurchase()}>
+          <a className="fa-solid fa-cart-shopping" style={{ marginRight: '6%' }} ></a>PURCHASE
         </button>
       </div>
     </section>
@@ -89,12 +87,12 @@ function Cart() {
         );
     }
 
-    // Helper function to calculate total price
-  function calculateTotalPrice() {
-    return cartItems.reduce((total, item) => {
-      return total + parseFloat(item.price.replace('Rs ', '')) * item.quantity;
-    }, 0);
-  }
+  function handlePurchase(){
+    // Perform purchase action or show confirmation
+    toast.success('Thank you for purchasing!')
+    // Example: Clearing the cart after purchase
+    setCartItems([]);
+  };
 }
 
 export default Cart;

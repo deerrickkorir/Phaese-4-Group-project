@@ -12,7 +12,6 @@ function GamePage() {
   const { cartItems, setCartItems, actions, adventures, racings, shooters } = useContext(ThemeContext);
   const [data, setData] = useState(actions);
   const [filteredData, setFilteredData] = useState(actions);
-  console.log(actions);
 
   function handleCategories(category) {
     switch (category) {
