@@ -17,7 +17,7 @@ const SignUp = () => {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
             console.log(user);
-            alert('SignUp successful');
+            alert('Account has been created successfully!');
         } catch (error) {
             console.log("errorCode:", error.code, "errorMessage:", error.message);
             alert('Error during signup');
