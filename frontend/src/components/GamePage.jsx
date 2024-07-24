@@ -1,69 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import toast from 'react-hot-toast';
 import "./GamePage.css";
 import logo from "../assets/search_3694304.png";
-import { fetchDataActions } from "./UseData";
-import { fetchDataAdventures } from "./UseData";
-import { fetchDataRacings } from "./UseData";
-import { fetchDataShooters } from "./UseData";
+import { ThemeContext } from '../ThemeContext';
 
 function GamePage() {
   const [category, setCategory] = useState("Games");
-  const [actions, setActions] = useState([]);
-  const [adventures, setAdventures] = useState([]);
-  const [racings, setRacings] = useState([]);
-  const [shooters, setShooters] = useState([]);
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
   const [backgroundImage, setBackgroundImage] = useState(
     "https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg"
   );
-
-  useEffect(() => {
-    fetchData();
-    fetchDataActions()
-      .then((data) => {
-        setActions(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching actions:", error);
-      });
-
-    fetchDataAdventures()
-      .then((data) => {
-        setAdventures(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching adventures:", error);
-      });
-
-    fetchDataRacings()
-      .then((data) => {
-        setRacings(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching racings:", error);
-      });
-
-    fetchDataShooters()
-      .then((data) => {
-        setShooters(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching shooters:", error);
-      });
-  }, []);
-
-  const fetchData = () => {
-    fetch("http://127.0.0.1:5555/actions")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setFilteredData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  };
+  const { cartItems, setCartItems, actions, adventures, racings, shooters } = useContext(ThemeContext);
+  const [data, setData] = useState(actions);
+  const [filteredData, setFilteredData] = useState(actions);
+  console.log(actions);
 
   function handleCategories(category) {
     switch (category) {
@@ -112,6 +61,22 @@ function GamePage() {
     setFilteredData(filtered);
   };
 
+  const addToCart = (item) => {
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (existingItem) {
+      // Update the quantity of the existing item
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        )
+      );
+    } else {
+      // Add the new item to the cart
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
+    toast.success('Game added to cart!')
+  };
+
   return (
     <div
       className="game-page"
@@ -148,7 +113,7 @@ function GamePage() {
               <div className="card-content">
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
-                <a href="" className="btn">
+                <a className='btn' onClick={() => addToCart(item)}>
                   Add to Cart
                 </a>
               </div>

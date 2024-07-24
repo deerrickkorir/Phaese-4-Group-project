@@ -9,12 +9,16 @@ import AboutPage from './components/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Contact from './components/Contact';
 import AddGame from './components/AddGame';
+import { ThemeProvider } from './ThemeContext';
+import { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
-    return (
+    return ( <ThemeProvider>
         <BrowserRouter>
             <div>
+            <Toaster/> 
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -28,6 +32,7 @@ function App() {
             </div>
 
         </BrowserRouter>
+        </ThemeProvider>
     );
 }
 
