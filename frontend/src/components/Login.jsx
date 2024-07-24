@@ -55,6 +55,7 @@ const Login = () => {
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                     <label className="form-label" htmlFor="form2Example28">Password</label>
+
                                 </div>
                                 <div className="pt-1 mb-4">
                                     <button className="btn btn-info btn-lg btn-block" type="submit">Login</button>

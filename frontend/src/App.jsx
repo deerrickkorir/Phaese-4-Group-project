@@ -18,11 +18,10 @@ function App() {
         <BrowserRouter>
             <div>
             <Toaster/> 
-            <Toaster/> 
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<Login/>} />
-                    <Route path="/login" element={<HomePage />} />
+                    <Route path="/home" element={<HomePage />} />
                     <Route path="/games" element={<GamePage />} />
                     <Route path="/contacts" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
@@ -37,6 +36,3 @@ function App() {
 }
 
 export default App;
-
-
-
