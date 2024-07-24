@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import AddGame from './components/AddGame';
 import { ThemeProvider } from './ThemeContext';
 import { Toaster } from 'react-hot-toast';
+import SignUp from './components/SignUp';
 
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
                     <Route path="/contacts" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/add game" element={<AddGame />} />
-                    <Route path="/about" element={<AboutPage />} /> 
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/signUp" element={<SignUp />} />
+
                 </Routes>
             </div>
 
