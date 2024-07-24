@@ -73,7 +73,7 @@ function GamePage() {
       // Add the new item to the cart
       setCartItems([...cartItems, { ...item, quantity: 1 }]);
     }
-    toast.success('Game added to cart!')
+    toast.success(`${item.name} added to cart!`)
   };
 
   return (
@@ -112,6 +112,7 @@ function GamePage() {
               <div className="card-content">
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
+                <p>Rating:{item.rating}/5</p>
                 <a className='btn' onClick={() => addToCart(item)}>
                   Add to Cart
                 </a>

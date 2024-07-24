@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
-import "./SignUp.css"; // Import the CSS file
+import "./SignUp.css";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -38,7 +38,6 @@ const SignUp = () => {
                 className="fas fa-crow fa-2x me-3 pt-5 mt-xl-4"
                 style={{ color: "#709085" }}
               ></i>
-              <span className="h1 fw-bold mb-0">E-GAME</span>
             </div>
             <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
               <form className="form" onSubmit={handleSignUp}>

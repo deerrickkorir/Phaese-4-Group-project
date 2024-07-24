@@ -16,10 +16,10 @@
     margin: 0 5rem;
     text-decoration: none;
     font-size: 0.8rem;
-    line-height: 2.6rem;
+    line-height: 2.0rem;
     text-transform: uppercase;
     transition: color 0.7s;
-    padding-top: 15px;
+    padding-top: 0px;
     position: relative;
   }
   
