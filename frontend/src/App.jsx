@@ -6,7 +6,7 @@ import Navbar from './components/NavBar';
 import Cart from './components/Cart';
 import Login from './components/Login';
 import AboutPage from './components/About';
-import SignUp from './components/SignUp'; // Import the SignUp component
+import SignUp from './components/SignUp'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Contact from './components/Contact';
 import AddGame from './components/AddGame';
@@ -17,13 +17,13 @@ function App() {
             <div>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<HomePage/>} />
                     <Route path="/games" element={<GamePage />} />
                     <Route path="/contacts" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
-                    <Route path="/login" element={<Login />} />
                     <Route path="/signUp" element={<SignUp />} /> {/* Add the SignUp route */}
-                    <Route path="/add-game" element={<AddGame />} />
+                    <Route path="/add game" element={<AddGame />} />
                     <Route path="/about" element={<AboutPage />} />
                 </Routes>
             </div>
